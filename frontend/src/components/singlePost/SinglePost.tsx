@@ -20,11 +20,9 @@ export const SinglePost = () => {
     const { user } = useContext(Context);
 
     useEffect(() => {
-        console.log(user?.username, "username");
         const getPost = async () => {
             const res = await axios.get(`/backend/posts/${slugPath}`);
             setPost(res.data);
-            console.log(post, "POST KURWA");
             setTitle(res.data.title);
             setDescription(res.data.desc);
         };
@@ -37,6 +35,7 @@ export const SinglePost = () => {
             });
             window.location.replace("/");
         } catch (err) {
+            // eslint-disable-next-line no-console
             console.log(err);
         }
     };
@@ -51,6 +50,7 @@ export const SinglePost = () => {
 
             setUpdateMode(false);
         } catch (err) {
+            // eslint-disable-next-line no-console
             console.log(err);
         }
     };

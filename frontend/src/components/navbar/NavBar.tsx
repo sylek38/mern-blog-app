@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { SearchInput } from "../searchInput/SearchInput";
 import * as S from "./NavBar.style";
 import { NavList } from "./navList/NavList";
 

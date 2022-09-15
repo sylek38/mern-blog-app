@@ -1,4 +1,4 @@
-import { ChangeEvent, SyntheticEvent } from "react";
+import { ChangeEvent } from "react";
 import * as S from "./TextAreaInput.style";
 
 interface Props {

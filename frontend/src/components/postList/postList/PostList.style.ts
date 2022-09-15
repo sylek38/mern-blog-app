@@ -1,4 +1,3 @@
-import { pxToRem } from "./../../utils/pxToRem";
 import styled from "styled-components";
 
 export const PostListContainer = styled.div`

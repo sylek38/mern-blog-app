@@ -1,15 +1,13 @@
 import { useEffect } from "react";
-import { TagType } from "../../../types/TagType";
-import { PostType } from "../../../views/Home";
 import { Tag } from "../../tag/Tag";
 import * as S from "./Post.style";
 
 interface Props {
     id: string;
-    createdAt: string;
+    createdAt?: string;
     desc: "string";
     title: "string";
-    username: "string";
+    username?: "string";
     categories: string | string[];
     photo: string;
 }

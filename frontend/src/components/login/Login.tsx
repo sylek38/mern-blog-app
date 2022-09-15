@@ -1,5 +1,5 @@
 import axios from "axios";
-import { ChangeEvent, SyntheticEvent, useContext, useState } from "react";
+import { SyntheticEvent, useContext, useState } from "react";
 import { Context, ReducerContext } from "../../contexts/Context";
 import { ActionKind } from "../../contexts/Reducer";
 import { Button } from "../button/Button";

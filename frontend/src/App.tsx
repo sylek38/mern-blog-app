@@ -1,8 +1,6 @@
 import { useContext } from "react";
 import { Routes, Route } from "react-router-dom";
-import { Login } from "./components/login/Login";
 import { Context, ContextProvider } from "./contexts/Context";
-import { SearchContextProvider } from "./contexts/SearchContext";
 import { ErrorView } from "./views/error/ErrorView";
 import { Home } from "./views/Home";
 import { LoginView } from "./views/login/LoginView";

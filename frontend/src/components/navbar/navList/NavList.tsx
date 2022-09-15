@@ -2,7 +2,7 @@ import * as S from "./NavList.style";
 import { navBarItems } from "../navBarItems";
 import { Button } from "../../button/Button";
 import { Hamburger } from "../hamburger/Hamburger";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { Context, ReducerContext } from "../../../contexts/Context";
 import { ActionKind } from "../../../contexts/Reducer";
 import { Link } from "react-router-dom";

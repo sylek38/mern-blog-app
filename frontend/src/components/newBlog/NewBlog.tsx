@@ -1,4 +1,4 @@
-import axios, { AxiosResponse } from "axios";
+import axios from "axios";
 import {
     ChangeEvent,
     SyntheticEvent,
@@ -23,11 +23,6 @@ export const NewBlog = () => {
 
     const { user } = useContext(Context);
 
-    // useEffect(() => {
-    //     console.log(description);
-    //     console.log(selectedCategory);
-    // }, [description]);
-
     useEffect(() => {
         const fetchCategories = async () => {
             const fetchedCategories = await axios.get("/backend/categories");
@@ -50,7 +45,6 @@ export const NewBlog = () => {
             photo: selectedFile,
             categories: selectedCategory,
         };
-        // console.log(newPost);
 
         if (selectedFile) {
             const data = new FormData();
@@ -61,9 +55,9 @@ export const NewBlog = () => {
             newPost.photo = fileName;
 
             try {
-                // console.log(data);
                 await axios.post("/backend/upload", data);
             } catch (err) {
+                // eslint-disable-next-line no-console
                 console.log(err);
             }
         }
@@ -106,19 +100,12 @@ export const NewBlog = () => {
                     value={selectedCategory}
                     onChange={(e) => setSelectedCategory(e.target.value)}
                     label="Choose category"
-                    items={
-                        // [{ text: "cat1" }]
-
-                        categories.map((category: any) => {
-                            return {
-                                text: category.name,
-                            };
-                        })
-                    }
+                    items={categories.map((category: any) => {
+                        return {
+                            text: category.name,
+                        };
+                    })}
                 ></SelectInput>
-
-                {/* rich text editor goes here */}
-                {/* <S.Container> */}
                 <TextAreaInput
                     id="post_description"
                     label="Write something..."
@@ -129,8 +116,6 @@ export const NewBlog = () => {
                     Add Blog
                 </Button>
             </S.Container>
-
-            {/* </S.Container> */}
         </S.Form>
     );
 };

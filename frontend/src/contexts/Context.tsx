@@ -26,15 +26,11 @@ export type InitialStateTypes = {
     user?: UserType | null;
     isFetching: boolean;
     isError: boolean;
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     dispatch?: Dispatch<Action> | null;
 };
 
 interface Props {
     children: ReactNode | ReactNode[];
-    // user: UserType;
-    // isFetching: boolean;
-    // isError: boolean;
 }
 const localStorageUser = localStorage.getItem("user");
 
@@ -55,10 +51,6 @@ export const ContextProvider = ({ children }: Props) => {
     useEffect(() => {
         localStorage.setItem("user", JSON.stringify(state.user));
     }, [state.user]);
-
-    useEffect(() => {
-        console.log("context ", state.user);
-    }, []);
 
     return (
         <Context.Provider
